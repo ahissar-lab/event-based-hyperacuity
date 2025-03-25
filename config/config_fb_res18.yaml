@@ -1,0 +1,48 @@
+#save path for the model
+# version A07 is retaylored for horizontal pass on 20240407 dataset
+#'config that is tailored for horizontal pass on 20240110 dataset'
+save_path: './saved_runs/'
+run_name: 'run_0'
+
+# Model parameters
+model: 'GrayscaleResNet18'
+frame_based: true
+ds_args_frame_based: true
+
+#model_args_model_head: 'cls_mlp'     # or 'cls_avgpool'
+#model_args_dropout_rate: 0.1
+#model_args_d_timeseries: 4           # number of features in the timeseries
+model_args_num_classes: 10
+
+#model_args_offsets: [[[-110,-35,-26,0]]]
+#model_args_scalings: [[[0.1, 1.0, 1.0 , 1.0]]]
+
+# Dataset parameters
+dataset: 'eb_ds'
+#eb_ds_path: ''
+num_workers: 4
+n_validation: 6000
+# arguments that are passed to the dataset class
+ds_args_shuffle_events: false
+ds_args_n_samples: 48
+
+
+# Data augmentation parameters (parameters that may differ between train and val)
+ds_args_train_from_time_interval: [70, 180]
+ds_args_val_start_time: 100
+
+# Training parameters
+epochs: 100
+use_sgd: false
+lr: 0.0001                       # Learning rate (0.1 if using sgd)
+momentum: 0.9
+no_cuda: false
+seed: 1
+batch_size: 64
+
+# Evaluation parameters
+pretrained_model_path: ''
+eval: false
+
+#supervision mode
+supervision_mode: 'supervised'
