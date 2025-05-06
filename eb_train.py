@@ -154,7 +154,8 @@ def create_dataloaders(args, shuffle_order=None, do_subsplits=True, eval=False):
                                                                            n_samples=args.ds_args_n_samples,
                                                                            shuffle_order=shuffle_order, jitter_ts=args.eb_ds_ts_jitter,
                                                                             imu_channels=args.eb_ds_imu_channels if hasattr(args, 'eb_ds_imu_channels') else None,
-                                                     time_align_by_imu_edge=args.eb_ds_time_align_by_imu_edge if hasattr(args, 'eb_ds_time_align_by_imu_edge') else False)
+                                                     time_align_by_imu_edge=args.eb_ds_time_align_by_imu_edge if hasattr(args, 'eb_ds_time_align_by_imu_edge') else False,
+                                                     field_names=args.eb_ds_events_field_names if hasattr(args, 'eb_ds_events_field_names') else ['timestamp','x','y','polarity'],)
         elif frame_based:
             ds, labels, shuffle_order = load_dataset(base_path=os.path.join(args.eb_ds_path,args.ds_test_subdir if eval else args.ds_train_subdir),
                                                                            shuffle_order=shuffle_order,

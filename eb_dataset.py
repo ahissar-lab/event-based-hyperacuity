@@ -285,7 +285,8 @@ def extract_imu_record(imu_data, imu_channels, imu_name_prefix, target_timestamp
     return imu_rec
 
 
-def load_dataset(base_path=None, preprocess=True, n_samples=None, shuffle_order=None, do_shuffle=True, jitter_ts=0.0,
+def load_dataset(base_path=None, preprocess=True, n_samples=None, shuffle_order=None, do_shuffle=True, jitter_ts=0.0, 
+                 field_names=['timestamp', 'x', 'y', 'polarity'],
                  imu_channels=None, imu_name_prefix='gyroscope',
                  time_align_by_imu_edge=False,
                  time_align_by_imu_edge_threshold=-15,
@@ -339,7 +340,7 @@ def load_dataset(base_path=None, preprocess=True, n_samples=None, shuffle_order=
                     raise ValueError("number of events and imu samples do not match")
 
             for ee, events_sym in enumerate(events):
-                timestamps = events_sym[:]['timestamp']
+                timestamps = events_sym[:][field_names[0]]
                 imu_rec = []
                 if imu_channels is not None:
                     imu_rec = extract_imu_record(imu[ee], imu_channels, imu_name_prefix, timestamps)
@@ -347,7 +348,7 @@ def load_dataset(base_path=None, preprocess=True, n_samples=None, shuffle_order=
                         print(f'extracted imu data for {ee} samples')
 
                 if time_align_by_imu_edge:
-                    timestamps_imu = imu[ee][:]['timestamp']
+                    timestamps_imu = imu[ee][:][field_names[0]]
                     imu_speed = imu[ee][f'{imu_name_prefix}{time_align_by_imu_edge_channel}']
                     imu_edge_idx = find_threshold_crossings(imu_speed, time_align_by_imu_edge_threshold, direction=time_align_by_imu_edge_dir)
                     imu_edge = timestamps_imu[imu_edge_idx[0]] if imu_edge_idx is not None else np.nan
@@ -357,7 +358,7 @@ def load_dataset(base_path=None, preprocess=True, n_samples=None, shuffle_order=
                     time_edge_lst.append(imu_edge)
 
                 events_mat = np.column_stack([timestamps,
-                                              events_sym[:]['x'], events_sym[:]['y'], events_sym[:]['polarity']] + imu_rec)
+                                              events_sym[:]['x'], events_sym[:]['y'], events_sym[:][field_names[3]]] + imu_rec)
                 events_lst.append(events_mat)
 
             if time_align_by_imu_edge:
