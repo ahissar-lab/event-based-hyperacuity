@@ -1,0 +1,16 @@
+#BSUB -J train_eb_transformer 
+#BSUB -q short-gpu
+#BSUB -gpu num=1:j_exclusive=yes:gmem=4G 
+#BSUB -R affinity[thread*4] 
+#BSUB -R select[mem>4000]
+#BSUB -R rusage[mem=4000]
+#BSUB -o lsf/output/out_train_eb_transformer.%J.log
+#BSUB -e lsf/output/err_train_eb_transformer.%J.log
+
+#module purge
+module load miniconda/24.11_environmentally
+conda activate eb_hyperacuity
+
+python eb_train.py --run_name ebtMNISTD1_supervised_ --config_file config/config_eb_PTr.yaml  --eb_ds_path ../datasets/eb_datasets/20240623 --model_args_model_head cls_avgpool --ds_args_n_samples 48 --seed 42 --save_path ./saved_runs/
+
+#cp lsf_logs/err_ssd_mobilenet_drc."$LSB_JOBID".log ""$JOB_DIR"/"
