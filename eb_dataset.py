@@ -286,7 +286,7 @@ def extract_imu_record(imu_data, imu_channels, imu_name_prefix, target_timestamp
 
 
 def load_dataset(base_path=None, preprocess=True, n_samples=None, shuffle_order=None, do_shuffle=True, jitter_ts=0.0, 
-                 field_names=['timestamp', 'x', 'y', 'polarity'],
+                 field_names=['timestamp', 'x', 'y', 'polarity'], polarity_filter=None,
                  imu_channels=None, imu_name_prefix='gyroscope',
                  time_align_by_imu_edge=False,
                  time_align_by_imu_edge_threshold=-15,
@@ -402,6 +402,8 @@ def load_dataset(base_path=None, preprocess=True, n_samples=None, shuffle_order=
             if jitter_ts != 0.0:
                 jitter_timestamp(ds, jitter_ts)
             ds = [zero_pad(d, n_samples=n_samples) for d in ds]
+            if polarity_filter is not None:
+                ds = [d[d[:, 3] == polarity_filter] for d in ds]
 
     if shuffle_order is None:
         labels = labels.tolist()

@@ -9,28 +9,29 @@ model_args_dropout_rate: 0.1
 model_args_d_timeseries: 4           # number of features in the timeseries
 model_args_num_classes: 10
 
-model_args_offsets: [[[-110,-35,-26,0]]]
+model_args_offsets: [[[-158,-40,-23,0]]]
 model_args_scalings: [[[0.1, 1.0, 1.0 , 1.0]]]
 
 # Dataset parameters
 dataset: 'eb_ds'
 #eb_ds_path: ''
 num_workers: 4
-n_validation: 1200
+n_validation: 6000
 # arguments that are passed to the dataset class
 ds_args_shuffle_events: false
-ds_args_n_samples: 96
+ds_args_n_samples: 48
 eb_ds_events_field_names: ['t','x','y','p']
 
 
 # Data augmentation parameters (parameters that may differ between train and val)
-ds_args_train_from_time_interval: [70, 180]
-ds_args_val_start_time: 100
+# ds_args_train_from_time_interval: [70, 180]
+ds_args_train_from_time_interval: [40, 300]
+ds_args_val_start_time: 140
 
 # Training parameters
 epochs: 100
 use_sgd: false
-lr: 0.0001                       # Learning rate (0.1 if using sgd)
+lr: 0.0001                      # Learning rate (0.1 if using sgd)
 momentum: 0.9
 no_cuda: false
 seed: 1
