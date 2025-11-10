@@ -94,7 +94,13 @@ class EB_DS(Dataset):
 
         # a hook for handling frame based data
         if self.frame_based:
-            x = np.squeeze(x[-1]['frame'])/255.
+            if x.shape[0] >= 1:
+                x = np.squeeze(x[-1]['frame'])/255.
+            else:
+                print(index)
+                print(x)
+                print('no frames in sample, returning zeros')
+                x = np.zeros([10,10])
             return x.astype(np.float32), y
 
         if self.start_index is not None:
