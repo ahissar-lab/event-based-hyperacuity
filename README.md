@@ -1,7 +1,6 @@
 # README
 
-This README file contains instructions on how to train the models presented in the 'Temporal coding enables hyperacuity in event based vision' paper using the accompanying supplied code.
-See license.md for code usage licence.
+This README file contains instructions on how to train the models presented in the **'Temporal coding enables hyperacuity in event based vision'** paper using the accompanying supplied code.
 
 ## License
 
