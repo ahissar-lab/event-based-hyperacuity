@@ -28,7 +28,7 @@ export CUDA_VISIBLE_DEVICES=0
 ```
 
 ## Downloading the required datasets
-The tiny-event-based and tiny-frame-based datasets used to produce the results depicted in the paper can be downloaded from the following link: [datasets](https://drive.google.com/file/d/1CMu9Q_caL5lvrl86f6cVqcb_VM6gWnp2/view?usp=sharing) 
+The tiny-event-based and tiny-frame-based datasets used to produce the results depicted in the paper can be downloaded from the following link: [https://doi.org/10.5281/zenodo.20973757](https://doi.org/10.5281/zenodo.20973757) 
 
 ## Evaluate the results from the paper
 
