@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/954564915.svg)](https://doi.org/10.5281/zenodo.20777652)
+
 # README
 
 This README file contains instructions on how to train the models presented in the **'Temporal coding enables hyperacuity in event based vision'** paper using the accompanying supplied code.
