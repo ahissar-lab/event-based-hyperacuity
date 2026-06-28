@@ -37,12 +37,7 @@ If You distribute the Software or any Derivative Work, You must:
 
 ## 4. Patent Grant
 
-If You submit a Contribution to this repository:
-
-- You grant all users of the Software a perpetual, irrevocable, worldwide, royalty-free license under any patent rights You hold or control, solely to the extent necessary to use, reproduce, and distribute the Software or Derivative Works as permitted by this license.
-- You agree not to initiate or threaten patent litigation against any user, contributor, or distributor of the Software for infringement of patent claims that are necessarily infringed by the Software.
-
-This patent grant does not extend to any use of the Software outside the scope of this license.
+This license is granted solely under the copyright rights of the Author(s) to use, copy, modify, and distribute the Software for Non-Commercial purposes as defined herein. This license does not grant, convey, or imply any rights under any patents, patent applications, or utility models owned or controlled by the Author(s), in any jurisdiction worldwide. Any use of functional methods or processes implemented in this Software that requires a patent license — including but not limited to commercial exploitation or manufacturing — requires a separate, explicit written patent license agreement from the Author(s).
 
 ---
 
