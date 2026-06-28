@@ -14,6 +14,12 @@ For more details, please refer to the full license in the [LICENSE.md](LICENSE.m
 ```sh
 conda env create -f environment.yml -n [new_env_name]
 ```
+
+For setting up the environemnts on a copmuter without CUDA installed (for example creating it on a cluster login node to be run later on another server with GPU on the cluster) use the following command:
+```sh
+CONDA_OVERRIDE_CUDA=12.2 conda env create -f environment.yml -n [new_env_name]
+```
+
 The trainig code was tested on single GPU, in case of running on multi-GPU server please set the 'CUDA_VISIBLE_DEVICES' env vriable to a single gpu to allow proper execution. For example:
 
 ```sh
