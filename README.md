@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/954564915.svg)](https://doi.org/10.5281/zenodo.20777652)
+[![DOI](https://zenodo.org)](https://doi.org/10.5281/zenodo.20777652)
 
 # README
 
