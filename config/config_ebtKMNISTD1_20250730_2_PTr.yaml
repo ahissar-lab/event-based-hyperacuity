@@ -9,8 +9,7 @@ model_args_dropout_rate: 0.1
 model_args_d_timeseries: 4           # number of features in the timeseries
 model_args_num_classes: 10
 
-#model_args_offsets: [[[-110,-45,-27,0]]]
-model_args_offsets: [[[-110,-42,-26,0]]]
+model_args_offsets: [[[-110,-36,-24,0]]]
 model_args_scalings: [[[0.1, 1.0, 1.0 , 1.0]]]
 
 # Dataset parameters
