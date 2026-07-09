@@ -1,0 +1,240 @@
+<dv version="2.0">
+    <node name="" path="/">
+        <node name="mainloop" path="/mainloop/">
+            <attr key="_guiSupport" type="string">{&quot;lastDeployedHash&quot;:&quot;83321dda44876276b9593e92bb128319ca01b6e3&quot;}</attr>
+            <node name="Recorder" path="/mainloop/Recorder/">
+                <attr key="_guiSupport" type="string">{&quot;boxX&quot;:700.0,&quot;boxY&quot;:450.0}</attr>
+                <attr key="_priorityAttributes" type="string">compression,directory,prefix,file,timeout</attr>
+                <attr key="compression" type="string">LZ4</attr>
+                <attr key="directory" type="string">/home/syclopx/Workspace/jupyter_datasets/dv_ds_aedat/mnist_ds_1</attr>
+                <attr key="logLevel" type="string">INFO</attr>
+                <attr key="moduleLibrary" type="string">dv_output_file</attr>
+                <attr key="prefix" type="string">mnist_90_99</attr>
+                <attr key="running" type="bool">false</attr>
+                <attr key="timeout" type="long">25000</attr>
+                <node name="inputs" path="/mainloop/Recorder/inputs/">
+                    <node name="output0" path="/mainloop/Recorder/inputs/output0/">
+                        <attr key="from" type="string">capture[events]</attr>
+                    </node>
+                    <node name="output1" path="/mainloop/Recorder/inputs/output1/">
+                        <attr key="from" type="string">capture[triggers]</attr>
+                    </node>
+                    <node name="output2" path="/mainloop/Recorder/inputs/output2/">
+                        <attr key="from" type="string">capture[imu]</attr>
+                    </node>
+                    <node name="output3" path="/mainloop/Recorder/inputs/output3/">
+                        <attr key="from" type="string"/>
+                    </node>
+                </node>
+            </node>
+            <node name="Trigger_server" path="/mainloop/Trigger_server/">
+                <attr key="_guiSupport" type="string">{&quot;boxX&quot;:950.0,&quot;boxY&quot;:450.0}</attr>
+                <attr key="_priorityAttributes" type="string">compression,ipAddress,portNumber</attr>
+                <attr key="compression" type="string">NONE</attr>
+                <attr key="ipAddress" type="string">0.0.0.0</attr>
+                <attr key="logLevel" type="string">INFO</attr>
+                <attr key="maxConcurrentConnections" type="int">10</attr>
+                <attr key="maxConnectionsBacklog" type="int">5</attr>
+                <attr key="maxDataBacklog" type="int">5</attr>
+                <attr key="moduleLibrary" type="string">dv_output_net_tcp_server</attr>
+                <attr key="portNumber" type="int">7778</attr>
+                <attr key="running" type="bool">true</attr>
+                <attr key="timeout" type="long">0</attr>
+                <node name="inputs" path="/mainloop/Trigger_server/inputs/">
+                    <node name="output0" path="/mainloop/Trigger_server/inputs/output0/">
+                        <attr key="from" type="string">capture[triggers]</attr>
+                    </node>
+                </node>
+            </node>
+            <node name="Trigger_server_2" path="/mainloop/Trigger_server_2/">
+                <attr key="_guiSupport" type="string">{&quot;boxX&quot;:950.0,&quot;boxY&quot;:200.0}</attr>
+                <attr key="_priorityAttributes" type="string">compression,ipAddress,portNumber</attr>
+                <attr key="compression" type="string">NONE</attr>
+                <attr key="ipAddress" type="string">0.0.0.0</attr>
+                <attr key="logLevel" type="string">INFO</attr>
+                <attr key="maxConcurrentConnections" type="int">10</attr>
+                <attr key="maxConnectionsBacklog" type="int">5</attr>
+                <attr key="maxDataBacklog" type="int">5</attr>
+                <attr key="moduleLibrary" type="string">dv_output_net_tcp_server</attr>
+                <attr key="portNumber" type="int">7779</attr>
+                <attr key="running" type="bool">true</attr>
+                <attr key="timeout" type="long">0</attr>
+                <node name="inputs" path="/mainloop/Trigger_server_2/inputs/">
+                    <node name="output0" path="/mainloop/Trigger_server_2/inputs/output0/">
+                        <attr key="from" type="string">capture[triggers]</attr>
+                    </node>
+                </node>
+            </node>
+            <node name="_visualizer_capture___events_04a7811649f74ed79c3e59ca8c914bea" path="/mainloop/_visualizer_capture___events_04a7811649f74ed79c3e59ca8c914bea/">
+                <attr key="_guiSupport" type="string">{&quot;visualizerX&quot;:0,&quot;visualizerY&quot;:0,&quot;size&quot;:2,&quot;minimized&quot;:false,&quot;boxX&quot;:400.0,&quot;boxY&quot;:500.0}</attr>
+                <attr key="_priorityAttributes" type="string">compression,ipAddress,portNumber</attr>
+                <attr key="compression" type="string">NONE</attr>
+                <attr key="ipAddress" type="string">0.0.0.0</attr>
+                <attr key="logLevel" type="string">INFO</attr>
+                <attr key="maxConcurrentConnections" type="int">10</attr>
+                <attr key="maxConnectionsBacklog" type="int">5</attr>
+                <attr key="maxDataBacklog" type="int">5</attr>
+                <attr key="moduleLibrary" type="string">dv_output_net_tcp_server</attr>
+                <attr key="portNumber" type="int">34997</attr>
+                <attr key="running" type="bool">true</attr>
+                <attr key="timeout" type="long">0</attr>
+                <node name="inputs" path="/mainloop/_visualizer_capture___events_04a7811649f74ed79c3e59ca8c914bea/inputs/">
+                    <node name="output0" path="/mainloop/_visualizer_capture___events_04a7811649f74ed79c3e59ca8c914bea/inputs/output0/">
+                        <attr key="from" type="string">capture[events]</attr>
+                    </node>
+                </node>
+            </node>
+            <node name="capture" path="/mainloop/capture/">
+                <attr key="_guiSupport" type="string">{&quot;boxX&quot;:350.0,&quot;boxY&quot;:100.0}</attr>
+                <attr key="_priorityAttributes" type="string">dataMode</attr>
+                <attr key="busNumber" type="int">0</attr>
+                <attr key="dataMode" type="string">Events only</attr>
+                <attr key="devAddress" type="int">0</attr>
+                <attr key="logLevel" type="string">WARNING</attr>
+                <attr key="moduleLibrary" type="string">dv_davis</attr>
+                <attr key="running" type="bool">true</attr>
+                <attr key="serialNumber" type="string"/>
+                <node name="DAVIS240C" path="/mainloop/capture/DAVIS240C/">
+                    <node name="chip" path="/mainloop/capture/DAVIS240C/chip/">
+                        <attr key="AERnArow" type="bool">false</attr>
+                        <attr key="AnalogMux0" type="int">0</attr>
+                        <attr key="AnalogMux1" type="int">0</attr>
+                        <attr key="AnalogMux2" type="int">0</attr>
+                        <attr key="BiasEnable" type="bool">true</attr>
+                        <attr key="BiasMux0" type="int">0</attr>
+                        <attr key="DigitalMux0" type="int">0</attr>
+                        <attr key="DigitalMux1" type="int">0</attr>
+                        <attr key="DigitalMux2" type="int">0</attr>
+                        <attr key="DigitalMux3" type="int">0</attr>
+                        <attr key="ResetCalibNeuron" type="bool">true</attr>
+                        <attr key="ResetTestPixel" type="bool">true</attr>
+                        <attr key="TypeNCalibNeuron" type="bool">false</attr>
+                        <attr key="UseAOut" type="bool">false</attr>
+                        <attr key="_priorityAttributes" type="string"/>
+                    </node>
+                </node>
+                <node name="aps" path="/mainloop/capture/aps/">
+                    <attr key="AutoExposure" type="bool">false</attr>
+                    <attr key="EndColumn" type="int">239</attr>
+                    <attr key="EndRow" type="int">179</attr>
+                    <attr key="Exposure" type="int">4000</attr>
+                    <attr key="FrameInterval" type="int">40000</attr>
+                    <attr key="FrameMode" type="string">Default</attr>
+                    <attr key="GlobalShutter" type="bool">true</attr>
+                    <attr key="StartColumn" type="int">0</attr>
+                    <attr key="StartRow" type="int">0</attr>
+                    <attr key="TakeSnapShot" type="bool">false</attr>
+                    <attr key="WaitOnTransferStall" type="bool">true</attr>
+                    <attr key="_priorityAttributes" type="string">AutoExposure,Exposure,FrameInterval,FrameMode</attr>
+                </node>
+                <node name="dvs" path="/mainloop/capture/dvs/">
+                    <attr key="ExternalAERControl" type="bool">false</attr>
+                    <attr key="WaitOnTransferStall" type="bool">false</attr>
+                    <attr key="_priorityAttributes" type="string"/>
+                    <node name="PolarityFilter" path="/mainloop/capture/dvs/PolarityFilter/">
+                        <attr key="Flatten" type="bool">false</attr>
+                        <attr key="Suppress" type="bool">false</attr>
+                        <attr key="SuppressType" type="bool">false</attr>
+                        <attr key="_priorityAttributes" type="string"/>
+                    </node>
+                    <node name="ROIFilter" path="/mainloop/capture/dvs/ROIFilter/">
+                        <attr key="EndColumn" type="int">129</attr>
+                        <attr key="EndRow" type="int">104</attr>
+                        <attr key="StartColumn" type="int">70</attr>
+                        <attr key="StartRow" type="int">45</attr>
+                        <attr key="_priorityAttributes" type="string"/>
+                    </node>
+                    <node name="SkipFilter" path="/mainloop/capture/dvs/SkipFilter/">
+                        <attr key="Enable" type="bool">false</attr>
+                        <attr key="SkipEveryEvents" type="int">1</attr>
+                        <attr key="_priorityAttributes" type="string"/>
+                    </node>
+                </node>
+                <node name="externalInput" path="/mainloop/capture/externalInput/">
+                    <attr key="DetectFallingEdges" type="bool">true</attr>
+                    <attr key="DetectPulseLength" type="int">40000</attr>
+                    <attr key="DetectPulsePolarity" type="bool">false</attr>
+                    <attr key="DetectPulses" type="bool">false</attr>
+                    <attr key="DetectRisingEdges" type="bool">true</attr>
+                    <attr key="RunDetector" type="bool">true</attr>
+                    <attr key="_priorityAttributes" type="string">RunDetector,DetectFallingEdges,DetectRisingEdges,DetectPulses,DetectPulseLength,DetectPulsePolarity</attr>
+                </node>
+                <node name="imu" path="/mainloop/capture/imu/">
+                    <attr key="AccelFullScale" type="int">1</attr>
+                    <attr key="DigitalLowPassFilter" type="int">1</attr>
+                    <attr key="GyroFullScale" type="int">1</attr>
+                    <attr key="RunAccelerometer" type="bool">true</attr>
+                    <attr key="RunGyroscope" type="bool">true</attr>
+                    <attr key="RunTemperature" type="bool">true</attr>
+                    <attr key="SampleRateDivider" type="int">0</attr>
+                    <attr key="_priorityAttributes" type="string"/>
+                </node>
+                <node name="multiplexer" path="/mainloop/capture/multiplexer/">
+                    <attr key="DropDVSOnTransferStall" type="bool">true</attr>
+                    <attr key="DropExtInputOnTransferStall" type="bool">true</attr>
+                    <attr key="Run" type="bool">true</attr>
+                    <attr key="TimestampReset" type="bool">false</attr>
+                    <attr key="TimestampRun" type="bool">true</attr>
+                    <attr key="_priorityAttributes" type="string"/>
+                </node>
+                <node name="system" path="/mainloop/capture/system/">
+                    <attr key="DataExchangeBufferSize" type="int">64</attr>
+                    <attr key="PacketContainerInterval" type="int">10000</attr>
+                    <attr key="PacketContainerMaxPacketSize" type="int">0</attr>
+                    <attr key="_priorityAttributes" type="string"/>
+                </node>
+                <node name="usb" path="/mainloop/capture/usb/">
+                    <attr key="BufferNumber" type="int">8</attr>
+                    <attr key="BufferSize" type="int">8192</attr>
+                    <attr key="EarlyPacketDelay" type="int">8</attr>
+                    <attr key="Run" type="bool">true</attr>
+                    <attr key="_priorityAttributes" type="string"/>
+                </node>
+            </node>
+            <node name="event_server" path="/mainloop/event_server/">
+                <attr key="_guiSupport" type="string">{&quot;boxX&quot;:100.0,&quot;boxY&quot;:450.0}</attr>
+                <attr key="_priorityAttributes" type="string">compression,ipAddress,portNumber</attr>
+                <attr key="compression" type="string">NONE</attr>
+                <attr key="ipAddress" type="string">0.0.0.0</attr>
+                <attr key="logLevel" type="string">INFO</attr>
+                <attr key="maxConcurrentConnections" type="int">10</attr>
+                <attr key="maxConnectionsBacklog" type="int">5</attr>
+                <attr key="maxDataBacklog" type="int">5</attr>
+                <attr key="moduleLibrary" type="string">dv_output_net_tcp_server</attr>
+                <attr key="portNumber" type="int">7777</attr>
+                <attr key="running" type="bool">true</attr>
+                <attr key="timeout" type="long">0</attr>
+                <node name="inputs" path="/mainloop/event_server/inputs/">
+                    <node name="output0" path="/mainloop/event_server/inputs/output0/">
+                        <attr key="from" type="string">capture[events]</attr>
+                    </node>
+                </node>
+            </node>
+        </node>
+        <node name="system" path="/system/">
+            <node name="config" path="/system/config/">
+                <attr key="saveFile" type="string">/etc/dv-runtime.xml</attr>
+            </node>
+            <node name="logger" path="/system/logger/">
+                <attr key="limitLogSize" type="long">20971520</attr>
+                <attr key="logLevel" type="string">INFO</attr>
+            </node>
+            <node name="modules" path="/system/modules/">
+                <attr key="modulesSearchPath" type="string"/>
+            </node>
+            <node name="profilers" path="/system/profilers/">
+                <attr key="heapProfilerEnable" type="bool">false</attr>
+                <attr key="heapProfilerOutputDirectory" type="string">/var/lib/dv-runtime</attr>
+                <attr key="heapProfilerOutputPrefix" type="string">dv_prof_mem</attr>
+            </node>
+            <node name="server" path="/system/server/">
+                <attr key="logLevel" type="string">INFO</attr>
+                <attr key="tls" type="bool">false</attr>
+                <attr key="tlsCertFile" type="string"/>
+                <attr key="tlsClientVerification" type="bool">false</attr>
+                <attr key="tlsClientVerificationFile" type="string"/>
+                <attr key="tlsKeyFile" type="string"/>
+            </node>
+        </node>
+    </node>
+</dv>
